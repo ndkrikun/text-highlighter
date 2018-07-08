@@ -13,6 +13,7 @@ import { HighlighterService } from 'src/app/services/highlighter.service';
 import { SafeHtmlPipe } from 'src/app/pipes/safe-html.pipe';
 import { SelectionFilterAreaComponent } from 'src/app/components/selection-filter-area/selection-filter-area.component';
 import { selectionFilterReducer } from 'src/app/reducers/selection-filter/selection-filter.reducer';
+import { NoteComponent } from './components/note/note.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { selectionFilterReducer } from 'src/app/reducers/selection-filter/select
     StoryAreaComponent,
     SafeHtmlPipe,
     SelectionFilterAreaComponent,
+    NoteComponent,
   ],
   imports: [
     BrowserModule,

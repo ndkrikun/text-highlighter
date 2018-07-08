@@ -9,6 +9,7 @@ import { TextSelectionService } from 'src/app/services/text-selection.service';
 import { AreaPickerService } from 'src/app/services/area-picker.service';
 import { StoryToggleSelectionAction } from 'src/app/reducers/story/actions/toggle-selection.action';
 import { SetSelectionFilterAction } from 'src/app/reducers/selection-filter/actions/set-selection-filter.action';
+import { selectionNote, filterNote } from './data/note.data';
 
 /**
  * Root component
@@ -19,12 +20,21 @@ import { SetSelectionFilterAction } from 'src/app/reducers/selection-filter/acti
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  /**
+   * Note for selection functionallity
+   */
+  public selectionNote = selectionNote;
+
+  /**
+   * Note for filter functionallity
+   */
+  public filterNote = filterNote;
 
   constructor(
     private readonly store: Store<AppState>,
     private readonly textSelection: TextSelectionService,
     private readonly areaPicker: AreaPickerService,
-  ) {}
+  ) { }
 
   /**
    * Returns collection of pick buttons

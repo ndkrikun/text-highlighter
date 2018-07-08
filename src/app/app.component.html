@@ -2,23 +2,32 @@
 
   <h1 class="app__headline">Text Highlighter Widget</h1>
 
-  <div class="app__container">
+  <div class="app__section">
     <app-picker-button
       *ngFor="let button of pickerButtons"
       [options]="button"
       (callback)="highlightFragment($event)"
     ></app-picker-button>
+
+    <app-note
+      [text]="selectionNote"
+    ></app-note>
+
+    <app-story-area></app-story-area>
   </div>
 
-  <app-story-area></app-story-area>
-
-  <div class="app__container">
+  <div class="app__section">
     <app-picker-button
       *ngFor="let button of pickerButtons"
       [options]="button"
       (callback)="chooseSelection($event)"
     ></app-picker-button>
+
+    <app-note
+      [text]="filterNote"
+    ></app-note>
+
+    <app-selection-area></app-selection-area>
   </div>
 
-  <app-selection-area></app-selection-area>
 </div>

@@ -11,6 +11,7 @@ import { HighlighterService } from 'src/app/services/highlighter.service';
 import { selectionFilterReducer } from 'src/app/reducers/selection-filter/selection-filter.reducer';
 import { SafeHtmlPipe } from 'src/app/pipes/safe-html.pipe';
 import { SelectionFilterAreaComponent } from 'src/app/components/selection-filter-area/selection-filter-area.component';
+import { NoteComponent } from 'src/app/components/note/note.component';
 
 export const AppConfigureTestingModule = () => {
   return TestBed.configureTestingModule({
@@ -20,6 +21,7 @@ export const AppConfigureTestingModule = () => {
       StoryAreaComponent,
       SafeHtmlPipe,
       SelectionFilterAreaComponent,
+      NoteComponent,
     ],
     imports: [
       StoreModule.forRoot<AppState>({
