@@ -8,15 +8,22 @@ import { SelectionConfig, Selection, SelectionArea } from 'src/app/models/select
   providedIn: 'root'
 })
 export class AreaPickerService {
+  /**
+   * Returns all items form area
+   */
+  public itemsFormArea([start, end]: SelectionArea): number[] {
+    return new Array<number>(end - start).fill(null)
+      .map((_, index) => start + index);
+  }
 
   /**
-   * Tells if area exists in text
+   * Tells if area exists in existing selections
    */
   public areaExist(areas: SelectionArea[], [start, end]: SelectionArea): boolean {
     return areas.some(
       area => (
-        area.includes(start) ||
-        area.includes(end)
+        this.itemsFormArea(area).includes(start) ||
+        this.itemsFormArea(area).includes(end)
       )
     );
   }
@@ -24,9 +31,9 @@ export class AreaPickerService {
   /**
    * Adds area to selection collection
    */
-  public pickArea(areas: SelectionArea[], options: SelectionConfig): SelectionArea[] {
-    if (!this.areaExist(areas, options.area)) {
-      areas.push(options.area);
+  public pickArea(areas: SelectionArea[], { area }: SelectionConfig): SelectionArea[] {
+    if (!this.areaExist(areas, area)) {
+      areas.push(area);
     }
     return areas;
   }
