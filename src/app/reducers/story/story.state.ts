@@ -1,7 +1,8 @@
 import { Selection } from '../../models/selection.model';
 
 export interface StoryState {
-  data: string;
-  selection: Selection[];
+  origin: string;
+  highlighted: string;
+  selections: Selection[];
 }
 

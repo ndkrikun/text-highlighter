@@ -1,3 +1,5 @@
-<p>
-  picker-button works!
-</p>
+<button
+  class="picker-button"
+  [style.background]="options.color"
+  (click)="choose()"
+>{{ options.id }}</button>

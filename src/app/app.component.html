@@ -1,2 +1,5 @@
-{{ title }}
-<app-picker-button></app-picker-button>
+<app-picker-button
+  *ngFor="let button of selectionButtons"
+  [options]="button"
+></app-picker-button>
+<app-story-area></app-story-area>

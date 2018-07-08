@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { AppState } from './app.state';
-import { take } from 'rxjs/operators';
+import { PickerButton } from './models/picker-button.model';
+import { pickerButtonCollection } from './data/picker-button.data';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +8,7 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public title = '';
-
-  constructor(
-    private readonly store: Store<AppState>,
-  ) {
-    this.store.pipe(
-      select('story'),
-      take(1),
-    ).subscribe(({ data }) => this.title = data);
+  public get selectionButtons(): PickerButton[] {
+    return pickerButtonCollection;
   }
 }
