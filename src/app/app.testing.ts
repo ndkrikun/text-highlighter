@@ -8,6 +8,9 @@ import { StoryAreaComponent } from 'src/app/components/story-area/story-area.com
 import { TextSelectionService } from 'src/app/services/text-selection.service';
 import { AreaPickerService } from 'src/app/services/area-picker.service';
 import { HighlighterService } from 'src/app/services/highlighter.service';
+import { selectionFilterReducer } from 'src/app/reducers/selection-filter/selection-filter.reducer';
+import { SafeHtmlPipe } from 'src/app/pipes/safe-html.pipe';
+import { SelectionFilterAreaComponent } from 'src/app/components/selection-filter-area/selection-filter-area.component';
 
 export const AppConfigureTestingModule = () => {
   return TestBed.configureTestingModule({
@@ -15,10 +18,13 @@ export const AppConfigureTestingModule = () => {
       AppComponent,
       PickerButtonComponent,
       StoryAreaComponent,
+      SafeHtmlPipe,
+      SelectionFilterAreaComponent,
     ],
     imports: [
       StoreModule.forRoot<AppState>({
-        story: storyReducer
+        story: storyReducer,
+        selectionFilter: selectionFilterReducer,
       })
     ],
     providers: [

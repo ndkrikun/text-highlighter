@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SelectionConfig, Selection, SelectionArea } from '../models/selection.model';
+import { SelectionConfig, Selection, SelectionArea } from 'src/app/models/selection.model';
 
 @Injectable({
   providedIn: 'root'

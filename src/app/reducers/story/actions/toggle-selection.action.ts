@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
-import { StoryState } from 'src/app/reducers/story/story.state';
-import { StoryActionTypes } from 'src/app/reducers/story/story.action-types';
+import { StoryState } from '../story.state';
+import { StoryActionTypes } from '../story.action-types';
 import { Selection, SelectionConfig } from '../../../models/selection.model';
 
 export class StoryToggleSelectionAction implements Action {

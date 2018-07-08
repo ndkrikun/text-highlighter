@@ -1,4 +1,4 @@
-import { Selection } from '../../models/selection.model';
+import { Selection } from 'src/app/models/selection.model';
 
 export interface StoryState {
   origin: string;

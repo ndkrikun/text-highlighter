@@ -1,5 +1,5 @@
 import { StoryState } from './story.state';
-import { storyText } from 'src/app/data/story.data';
+import { storyText } from '../../data/story.data';
 import { StoryToggleSelectionAction } from './actions/toggle-selection.action';
 import { StoryActionTypes } from './story.action-types';
 import { ColorTypeIds } from '../../models/color.model';

@@ -1,0 +1,10 @@
+<div class="selection-filter-area">
+  <p
+    class="selection-filter-area__paragraph"
+    *ngFor="let paragraph of paragrahps"
+  >
+    <span
+      [style.backgroundColor]="getColorCode(paragraph.color)"
+    >{{ paragraph.text }}</span>
+  </p>
+</div>

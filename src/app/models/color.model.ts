@@ -5,7 +5,7 @@ export enum ColorTypeIds {
 }
 
 export enum ColorCode {
-  green = '#B0CE94',
-  yellow = '#FFFD54',
-  red = '#EB3223',
+  green = '#3AEA49',
+  yellow = '#FAC537',
+  red = '#F34F56',
 }

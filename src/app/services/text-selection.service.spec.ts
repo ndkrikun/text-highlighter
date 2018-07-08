@@ -1,5 +1,5 @@
 import { inject } from '@angular/core/testing';
-import { TextSelectionService } from './text-selection.service';
+import { TextSelectionService } from 'src/app/services/text-selection.service';
 import { AppConfigureTestingModule } from 'src/app/app.testing';
 
 describe('TextSelectionService', () => {

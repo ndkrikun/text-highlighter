@@ -16,7 +16,14 @@ export class TextSelectionService {
     ];
   }
 
-  public get(): string {
+  public determinateFragment([ start, end ]: SelectionArea, text: string): string {
+    return text
+      .split('')
+      .splice(start, end - start)
+      .join('');
+  }
+
+  public getSelection(): string {
     return window.getSelection().toString();
   }
 }

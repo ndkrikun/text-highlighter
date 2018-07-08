@@ -1,5 +1,24 @@
-<app-picker-button
-  *ngFor="let button of selectionButtons"
-  [options]="button"
-></app-picker-button>
-<app-story-area></app-story-area>
+<div class="app">
+
+  <h1 class="app__headline">Text Highlighter Widget</h1>
+
+  <div class="app__container">
+    <app-picker-button
+      *ngFor="let button of pickerButtons"
+      [options]="button"
+      (callback)="highlightFragment($event)"
+    ></app-picker-button>
+  </div>
+
+  <app-story-area></app-story-area>
+
+  <div class="app__container">
+    <app-picker-button
+      *ngFor="let button of pickerButtons"
+      [options]="button"
+      (callback)="chooseSelection($event)"
+    ></app-picker-button>
+  </div>
+
+  <app-selection-area></app-selection-area>
+</div>

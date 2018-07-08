@@ -1,12 +1,10 @@
 import { TestBed, inject } from '@angular/core/testing';
-
-import { HighlighterService } from './highlighter.service';
+import { HighlighterService } from 'src/app/services/highlighter.service';
+import { AppConfigureTestingModule } from 'src/app/app.testing';
 
 describe('HighlighterService', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [HighlighterService]
-    });
+    AppConfigureTestingModule().compileComponents();
   });
 
   it('should be created', inject([HighlighterService], (service: HighlighterService) => {

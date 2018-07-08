@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Selection } from '../models/selection.model';
-import { StoryState } from '../reducers/story/story.state';
-import { ColorTypeIds, ColorCode } from '../models/color.model';
+import { Selection } from 'src/app/models/selection.model';
+import { ColorTypeIds, ColorCode } from 'src/app/models/color.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +9,12 @@ export class HighlighterService {
 
   constructor() { }
 
+  public getColorCode(colorId: ColorTypeIds): ColorCode {
+    return ColorCode[colorId];
+  }
+
   private startTag(colorId: ColorTypeIds): string {
-    return `<span style="background-color: ${ColorCode[colorId]}">`;
+    return `<span style="background-color: ${this.getColorCode(colorId)}">`;
   }
 
   private get endTag(): string {

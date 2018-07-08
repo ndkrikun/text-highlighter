@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { filter, take } from 'rxjs/operators';
-import { AppState } from 'src/app/app.state';
+import { AppState } from '../../app.state';
 import { Subscription } from 'rxjs';
 import { HighlighterService } from '../../services/highlighter.service';
 import { SetHightlighterAction } from '../../reducers/story/actions/set-hightlighter.action';
@@ -56,7 +56,6 @@ export class StoryAreaComponent implements OnInit, OnDestroy {
       select('story', 'highlighted'),
     ).subscribe(highlighted => {
       this.text = highlighted;
-      console.log(this.text);
     });
 
     this.subscriptions.push(titleSubscription);

@@ -1,6 +1,6 @@
 import { inject } from '@angular/core/testing';
 import { AreaPickerService } from './area-picker.service';
-import { AppConfigureTestingModule } from 'src/app/app.testing';
+import { AppConfigureTestingModule } from '../app.testing';
 
 describe('AreaPickerService', () => {
   beforeEach(() => {

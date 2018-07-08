@@ -1,0 +1,16 @@
+.app {
+  min-width: 320px;
+  max-width: 1014px;
+  margin: 20px auto;
+  padding: 0 20px;
+
+  &__headline {
+    padding: 20px 0;
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  &__container {
+    padding: 20px 0;
+  }
+}
