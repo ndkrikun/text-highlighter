@@ -1,6 +1,9 @@
 import { PickerButton } from '../models/picker-button.model';
 import { ColorTypeIds, ColorCode } from '../models/color.model';
 
+/**
+ * Collection of buttons
+ */
 export const pickerButtonCollection: PickerButton[] = [{
   id: ColorTypeIds.green,
   color: ColorCode.green

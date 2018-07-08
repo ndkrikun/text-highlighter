@@ -10,6 +10,9 @@ import { AreaPickerService } from 'src/app/services/area-picker.service';
 import { StoryToggleSelectionAction } from 'src/app/reducers/story/actions/toggle-selection.action';
 import { SetSelectionFilterAction } from 'src/app/reducers/selection-filter/actions/set-selection-filter.action';
 
+/**
+ * Root component
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,10 +26,16 @@ export class AppComponent {
     private readonly areaPicker: AreaPickerService,
   ) {}
 
+  /**
+   * Returns collection of pick buttons
+   */
   public get pickerButtons(): PickerButton[] {
     return pickerButtonCollection;
   }
 
+  /**
+   * Highlights fragment
+   */
   public highlightFragment(typeId: ColorTypeIds): void {
     this.store.pipe(
       select('story'),
@@ -42,6 +51,9 @@ export class AppComponent {
     });
   }
 
+  /**
+   * Sets active filter
+   */
   public chooseSelection(typeId: ColorTypeIds): void {
     this.store.dispatch(new SetSelectionFilterAction(typeId));
   }

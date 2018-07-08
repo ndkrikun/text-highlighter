@@ -2,6 +2,9 @@ import { Action } from '@ngrx/store';
 import { StoryActionTypes } from '../story.action-types';
 import { StoryState } from '../story.state';
 
+/**
+ * Sets hightlighted html
+ */
 export class SetHightlighterAction implements Action {
 
   public readonly type = StoryActionTypes.SET_HIGHLIGHTER;

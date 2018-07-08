@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { SelectionConfig, Selection, SelectionArea } from 'src/app/models/selection.model';
 
+/**
+ * Service for managing selection area indexes
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class AreaPickerService {
 
-  constructor() { }
-
+  /**
+   * Tells if area exists in text
+   */
   public areaExist(areas: SelectionArea[], [start, end]: SelectionArea): boolean {
     return areas.some(
       area => (
@@ -17,6 +21,9 @@ export class AreaPickerService {
     );
   }
 
+  /**
+   * Adds area to selection collection
+   */
   public pickArea(areas: SelectionArea[], options: SelectionConfig): SelectionArea[] {
     if (!this.areaExist(areas, options.area)) {
       areas.push(options.area);
@@ -24,6 +31,9 @@ export class AreaPickerService {
     return areas;
   }
 
+  /**
+   * Updated selection collection
+   */
   public updateAreas(selections: Selection[], options: SelectionConfig): Selection[] {
     return selections.map(selection => {
       if (selection.id === options.id) {

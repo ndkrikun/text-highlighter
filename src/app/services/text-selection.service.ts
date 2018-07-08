@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { SelectionArea } from 'src/app/models/selection.model';
 
+/**
+ * Service for managing text selection
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class TextSelectionService {
-
-  constructor() { }
-
+  /**
+   * Returns area fragment coordinates
+   */
   public determitaneArea(text: string, fragment: string): SelectionArea {
     const index = text.indexOf(fragment);
     return [
@@ -16,6 +19,9 @@ export class TextSelectionService {
     ];
   }
 
+  /**
+   * Returns fragment by coorinates
+   */
   public determinateFragment([ start, end ]: SelectionArea, text: string): string {
     return text
       .split('')
@@ -23,6 +29,9 @@ export class TextSelectionService {
       .join('');
   }
 
+  /**
+   * Returns window selection
+   */
   public getSelection(): string {
     return window.getSelection().toString();
   }

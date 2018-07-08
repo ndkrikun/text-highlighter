@@ -1,8 +1,11 @@
 import { Action } from '@ngrx/store';
 import { StoryState } from '../story.state';
 import { StoryActionTypes } from '../story.action-types';
-import { Selection, SelectionConfig } from '../../../models/selection.model';
+import { Selection } from '../../../models/selection.model';
 
+/**
+ * Toggles selection areas
+ */
 export class StoryToggleSelectionAction implements Action {
 
   public readonly type = StoryActionTypes.TOGGLE_SELECTION;

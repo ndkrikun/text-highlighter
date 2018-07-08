@@ -7,12 +7,24 @@ import { PickerButton } from '../../models/picker-button.model';
   styleUrls: ['./picker-button.component.scss']
 })
 export class PickerButtonComponent implements OnInit {
+  /**
+   * Button configuration
+   */
   @Input() public options: PickerButton;
 
+  /**
+   * Callback event emitter
+   */
   @Output() callback = new EventEmitter<string>();
 
+  /**
+   * Life cycle hook
+   */
   public ngOnInit(): void {}
 
+  /**
+   * Click handler
+   */
   public choose(): void {
     this.callback.emit(this.options.id);
   }

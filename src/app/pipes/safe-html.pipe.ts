@@ -9,6 +9,9 @@ export class SafeHtmlPipe implements PipeTransform {
     private sanitizer: DomSanitizer
   ) {}
 
+  /**
+   * Saves all html tag properties
+   */
   transform(value: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(value);
   }
