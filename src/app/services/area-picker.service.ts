@@ -30,6 +30,10 @@ export class AreaPickerService {
 
   /**
    * Adds area to selection collection
+   *
+   * @todo: check the flow when selection area is already exist and remove it form selection
+   * @todo: verify if it is required to combine areas to one
+   * @todo: verify if different color selections are crossing and implement specific conflicts managing flow
    */
   public pickArea(areas: SelectionArea[], { area }: SelectionConfig): SelectionArea[] {
     if (!this.areaExist(areas, area)) {

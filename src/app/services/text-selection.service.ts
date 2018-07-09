@@ -31,6 +31,10 @@ export class TextSelectionService {
 
   /**
    * Returns window selection
+   *
+   * @todo: return exactly the node element instead of the text
+   * to avoid cases of the same text selection on the page
+   * @todo: make it works with selections inside textarea or input elements
    */
   public getSelection(): string {
     return window.getSelection().toString();
